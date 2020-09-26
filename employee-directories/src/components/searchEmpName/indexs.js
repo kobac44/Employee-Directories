@@ -3,14 +3,14 @@ import DataAreaContext from "../../utils/DataAreaContext";
 import EmployeeList from "../../EmployeeList";
 import API from "../utils/API";
 
-class SearchEmpNameContainer extends Component {
-  state = {
-    search: "",
-    EmpName: [],
-  };
+// class SearchEmpNameContainer extends Component {
+//   state = {
+//     search: "",
+//     EmpName: [],
+//   };
 
-  // When this component mounts, search the randomuser API
-  componentDidMount() {
-    this.searchranndomuser("Employees");
-  }
-}
+//   // When this component mounts, search the randomuser API
+//   componentDidMount() {
+//     this.searchranndomuser("Employees");
+//   }
+// }
