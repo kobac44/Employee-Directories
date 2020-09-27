@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
-import "./EmpTable";
+import React from "react";
+import "./empTable.css";
+import EmployeeList from "../EmployeeList/index.js";
 
-functon EmpTable ({ headings, users, handlesort}) {
-    return(
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-        </table>
+function EmpTable(props) {
+  return (
+    <div id="table">
+      <div id="tableHeader">
+        <p onClick={props.OnFilter} id="img">
+          Image
+        </p>
+      </div>
+    </div>
+  );
 }
-export default Emptable
+
+export default EmpTable;

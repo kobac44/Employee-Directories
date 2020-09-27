@@ -2,9 +2,10 @@ import React from "react";
 import Main from "./components/Main";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
+// import { Button } from "reactstrap";
 import "./App.css";
 import Footer from "./components/Footer";
-import EmpTable from "./components/EmpTable";
+// import EmpTables from "./components/EmpTables/index.js";
 
 function App() {
   return (
