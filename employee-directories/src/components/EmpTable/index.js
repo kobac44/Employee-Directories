@@ -3,11 +3,14 @@ import "./EmpTable";
 
 functon EmpTable ({ headings, users, handlesort}) {
     return(
-        <div className="emptable mt-5">
-            <table className="table table-striped table-hover table-condensed">
-                
-            </table>
-            
-        </div>
-    )
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
 }
+export default Emptable
