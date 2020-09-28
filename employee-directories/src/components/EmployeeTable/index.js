@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "./utils/API";
 import "./EmployeeTable.css";
-// import EmployeeList from "./EmployeeList/index.js";
+import EmployeeList from "./EmployeeList/index.js";
 
-function EmployeeTable(props) {
+function EmployeeTable() {
+  const [user, updateEmployeeTable] = useState([]);
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=200&nat=us")
+      .user.API.then((response) => response.json())
+      .then(({ data: user }) => {
+        updateEmployeeTable(user);
+      });
+  });
+
   return (
     <div id="table">
       <div id="tableHeader">
@@ -22,8 +33,6 @@ function EmployeeTable(props) {
           DOB
         </p>
       </div>
-
-      {/* <EmployeeList selected={props.selected} /> */}
     </div>
   );
 }
