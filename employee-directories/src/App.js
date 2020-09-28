@@ -15,10 +15,11 @@ class App extends Component {
 
   componentDidMount() {
     API.getUsers(10).then((res) => {
-      this.state({
+      this.setState({
         employees: res.data.results,
         selected: res.data.results,
       });
+      console.log("selected", this.state.selected);
     });
   }
 
@@ -27,12 +28,12 @@ class App extends Component {
       <div className="App">
         <div className="page-container">
           <div className="content-wrap">
-            <EmployeeTable
-              selected={this.state.selected}
-              OnFilter={this.handleFilter}
-            />
             <Wrapper>
               <Header />
+              <EmployeeTable
+                selected={this.state.selected}
+                OnFilter={this.handleFilter}
+              />
               <Main />
             </Wrapper>
           </div>
