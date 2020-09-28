@@ -14,7 +14,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    API.getUsers25().then((res) => {
+    API.getUsers(10).then((res) => {
       this.state({
         employees: res.data.results,
         selected: res.data.results,
