@@ -1,25 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import API from "../../utils/API";
-// import "./EmployeeTable.css";
-import EmployeeList from "../EmployeeList/index.js";
+import "./EmployeeTable.css";
+// import EmployeeList from "../EmployeeList/index.js";
+
+state = {
+  users: [{}],
+};
 
 export default class EmployeeTable extends Component {
   async componentDidMount() {
+    this.setState({ users: response.data.results });
     const response = await API.getUsers();
     console.log(response);
   }
 
-  // render() {
-  //   return (
-  //     <div id="table">
-  //       <div id="tableHeader">
-  //         <p id="img">Image</p>
-  //         <p id="name">Name</p>
-  //         <p id="phone">Phone</p>
-  //         <p id="email">Email</p>
-  //         <p id="dob">DOB</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-}
+
+function EmployeeTable({ users }) {
+  return (
+    <tbody>
+      users.map((employee) = {" "}
+      {
+        // tr with all the td of employee information
+      }
+    </tbody>
+ )  
+};
+
+
+ export default EmployeeTable;
