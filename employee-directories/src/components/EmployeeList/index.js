@@ -1,6 +1,6 @@
 import React from "react";
-import "./employeeList.css";
-import EmpFunct from "../EmpFunct";
+import "./EmployeeList.css";
+// import EmpFunct from "../EmpFunct";
 import EmployeeTable from "../EmployeeTable";
 
 function EmployeeList(props) {
