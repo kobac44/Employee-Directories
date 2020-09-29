@@ -1,10 +1,11 @@
 import React from "react";
 import "./employeeList.css";
 import EmpFunct from "../EmpFunct";
+import EmployeeTable from "../EmployeeTable";
 
 function EmployeeList(props) {
   const list = props.selected.map((employee) => (
-    <Employeefunct
+    <EmployeeTable
       imageURL={employee.picture.thumbnail}
       first={employee.name.first}
       last={employee.name.last}
