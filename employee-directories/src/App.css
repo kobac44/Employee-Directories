@@ -45,4 +45,28 @@
   to {
     transform: rotate(360deg);
   }
+
+  /* EmployeeTable CSS */
+
+  /* table {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  tableHeader {
+    width: 100%;
+    font-size: medium;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    overflow-x: auto;
+    margin-right: 10px;
+  } */
 }

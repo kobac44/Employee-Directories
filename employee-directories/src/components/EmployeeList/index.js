@@ -4,7 +4,7 @@ import "./EmployeeList.css";
 import EmployeeTable from "../EmployeeTable";
 
 function EmployeeList(props) {
-  const list = props.selected.map((employee) => (
+  const table = props.selected.map((employee) => (
     <EmployeeTable
       imageURL={employee.picture.thumbnail}
       first={employee.name.first}
@@ -14,5 +14,6 @@ function EmployeeList(props) {
       dob={employee.dob.date}
     />
   ));
+  return table;
 }
 export default EmployeeList;
