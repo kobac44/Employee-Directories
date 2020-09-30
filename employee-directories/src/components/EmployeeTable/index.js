@@ -6,19 +6,21 @@ import EmployeeList from "../EmployeeList/index.js";
 export default class EmployeeTable extends Component {
   state = {
     users: [{}],
-    filterUser: [{}],
+    userfilter: [{}],
+    search: "",
   };
   async componentDidMount() {
     const response = await API.getUsers();
     this.setState({ users: response.data.results });
     console.log(response.data.results);
   }
-  // handleSearch = (event) => {
-  //   const value = event.target.value;
-  //   const employeefilter = this.state.users.filter((employee) => {
-  //     const employee = employee.filter;
-  //   });
-  // };
+  handleSearch = (event) => {
+    const value = event.target.value;
+    const employees = this.state.users((employees) => {
+    
+      const employees = employees.filter
+    });
+
   render() {
     return (
       <div>

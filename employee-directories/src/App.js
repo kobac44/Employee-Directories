@@ -15,8 +15,8 @@ export default class App extends Component {
             <Wrapper>
               <Header />
               <EmployeeTable />
-
               <Main />
+              {/* <SearchForm OnSearch={this.handleSearch} /> */}
             </Wrapper>
           </div>
           <Footer />
