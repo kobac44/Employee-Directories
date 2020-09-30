@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import "./App.css";
 import Footer from "./components/Footer";
+import Searchbox from "./components/Searchbox";
 import EmployeeTable from "./components/EmployeeTable";
 
 export default class App extends Component {
@@ -14,9 +15,10 @@ export default class App extends Component {
           <div className="content-wrap">
             <Wrapper>
               <Header />
+              <Searchbox OnSearch={this.onchange} />
+              <br></br>
               <EmployeeTable />
               <Main />
-              {/* <SearchForm OnSearch={this.handleSearch} /> */}
             </Wrapper>
           </div>
           <Footer />

@@ -7,7 +7,7 @@ function Footer() {
         <div className="row">
           <div className="col">
             <h4>
-              WATKINS ENTERPRISE | 5503 W.LAKE StREET DURHAM NC | &copy;
+              WATKINS ENTERPRISE | 5503 W.LAKE STREET DURHAM NC | &copy;
               {new Date().getFullYear()}
             </h4>
           </div>
