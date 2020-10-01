@@ -6,18 +6,7 @@ import EmployeeList from "../EmployeeList/index.js";
 export default class EmployeeTable extends Component {
   state = {
     search: "",
-    users: [{}],
-    userfilter: [{}],
-  };
-  renderUsers = (employees) => {
-    const { search } = this.state;
-    const employee = employees.users.toLowerCase();
-
-    if (
-      search !== "" &&
-      employees.user.toLowerCase().index0f(search.toLowerCase()) === -1
-    )
-      return null;
+    employees: [{}],
   };
 
   async componentDidMount() {
@@ -25,15 +14,21 @@ export default class EmployeeTable extends Component {
     this.setState({ users: response.data.results });
     console.log(response.data.results);
   }
+
+  renderUsers = (employees) => {
+    const { search } = this.state;
+    const users = employees.toLowerCase();
+
+    if (
+      search !== "" &&
+      users.employees.toLowerCase().index0f(search.toLowerCase()) === -1
+    )
+      return null;
+  };
+
   onchange = (e) => {
     this.setState({ search: e.target.value });
   };
-  // handleSearch = (event) => {
-  //   const value = event.target.value;
-  //   const employees = this.state.users((employees) => {
-
-  //     const employees = employees.filter
-  //   });
 
   render() {
     return (
