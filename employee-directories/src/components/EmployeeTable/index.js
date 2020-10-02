@@ -2,7 +2,7 @@ import React from "react";
 import "./EmployeeTable.css";
 import EmployeeList from "../EmployeeList/index.js";
 
-export default function EmployeeTable() {
+export default function EmployeeTable(props) {
   return (
     <div>
       <table className="table table-striped">
@@ -16,8 +16,10 @@ export default function EmployeeTable() {
             <th id="dob">DOB</th>
           </tr>
         </thead>
-        {/* setting props for employees list to be passed in as users */}
-        <EmployeeList />
+        <EmployeeList
+          isFetching={props.isFetching}
+          employees={props.employees}
+        />
       </table>
     </div>
   );

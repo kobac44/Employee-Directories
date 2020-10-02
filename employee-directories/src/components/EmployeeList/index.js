@@ -1,36 +1,15 @@
 import React, { Component } from "react";
 import "./EmployeeList.css";
-import API from "../../utils/API";
+
 export default class EmployeeList extends Component {
-  state = {
-    search: "",
-    employees: [{}],
-    isFetching: false,
-  };
-  async componentDidMount() {
-    const response = await API.getUsers();
-    this.setState({ employees: response.data.results });
-    this.setState({ isFetching: true });
-  }
-  renderUsers = (employees) => {
-    const { search } = this.state;
-    const users = employees.toLowerCase();
-    if (
-      search !== "" &&
-      users.employees.toLowerCase().index0f(search.toLowerCase()) === -1
-    )
-      return null;
-  };
-  onchange = (e) => {
-    this.setState({ search: e.target.value });
-  };
   render() {
     return (
       <tbody>
-        {!this.state.isFetching ? (
-          <div>Loading...</div>
+        {!this.props.isFetching ? (
+          <div></div>
         ) : (
-          this.state.employees.map((employee) => {
+          this.props.employees.map((employee) => {
+            console.log("employee", employee);
             return (
               <tr key={employee.login.uuid}>
                 <td>
