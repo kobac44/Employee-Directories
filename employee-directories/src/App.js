@@ -17,11 +17,14 @@ export default class App extends Component {
     userInput: "",
   };
   async componentDidMount() {
+    // console.log(response.data.results);
     const response = await API.getUsers();
+    console.log(response.data.results);
+
     this.setState({
       employees: response.data.results,
       isFetching: true,
-      filteredEmployees: response.data.results.employees,
+      filteredEmployees: response.data.results,
     });
     console.log(response.data.results);
     // setState takes in one argument  which is a json object with (x) amount of keys
@@ -29,15 +32,18 @@ export default class App extends Component {
 
   // search filter is not working (currently)
   handleInput = (e) => {
+    console.log("this state employees", this.state.employees);
     this.setState({
       userInput: e.target.value,
       filteredEmployees: [...this.state.employees].filter((employee) => {
-        console.log("filter");
+        console.log("filter", this.state.employees);
+
         const regex = new RegExp(e.target.value, "gi");
+
         return employee.name.last.match(regex);
       }),
     });
-    console.log("employee");
+    console.log("employee", this.state.employees);
   };
 
   //Sort function not working (currently)
@@ -45,7 +51,8 @@ export default class App extends Component {
     const filteredByName = [this.state.employees].sort((a, b) =>
       a.name.last > b.name.last ? 1 : -1
     );
-    console.log(filteredByName);
+
+    console.log(filteredByName, this.state.employees);
     this.setState({ filteredEmployees: filteredByName });
   };
 
@@ -79,7 +86,7 @@ export default class App extends Component {
               {/* key names are always on the left and the values on the right */}
               <EmployeeTable
                 isFetching={this.state.isFetching}
-                employees={this.state.employees}
+                employees={this.state.filteredEmployees}
               />
               <Main />
             </Wrapper>
