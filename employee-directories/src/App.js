@@ -11,8 +11,7 @@ import API from "./utils/API";
 export default class App extends Component {
   state = {
     search: "",
-    //
-    filteredByEmployees: [],
+    filteredEmployees: [],
     employees: [],
     isFetching: true,
     userInput: "",
@@ -67,7 +66,7 @@ export default class App extends Component {
               {/* key names are always on the left and the values on the right */}
               <EmployeeTable
                 isFetching={this.state.isFetching}
-                employees={this.state.employees}
+                employees={this.state.filteredemployees}
               />
               <Main />
             </Wrapper>
