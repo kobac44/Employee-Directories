@@ -31,10 +31,12 @@ export default class App extends Component {
     this.setState({
       userInput: e.target.value,
       filteredEmployees: [...this.state.employees].filter((employee) => {
+        console.log("filter");
         const regex = new RegExp(e.target.value, "gi");
         return employee.name.last.match(regex);
       }),
     });
+    console.log("employee");
   };
 
   // searchByName = () => {
@@ -66,7 +68,7 @@ export default class App extends Component {
               {/* key names are always on the left and the values on the right */}
               <EmployeeTable
                 isFetching={this.state.isFetching}
-                employees={this.state.filteredemployees}
+                employees={this.state.filteredEmployees}
               />
               <Main />
             </Wrapper>
