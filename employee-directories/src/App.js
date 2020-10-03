@@ -23,10 +23,11 @@ export default class App extends Component {
       isFetching: true,
       filteredEmployees: response.data.results.employees,
     });
-    console.log(response.data.result);
+    console.log(response.data.results);
     // setState takes in one argument  which is a json object with (x) amount of keys
   }
 
+  // search filter is not working (currently)
   handleInput = (e) => {
     this.setState({
       userInput: e.target.value,
@@ -39,14 +40,14 @@ export default class App extends Component {
     console.log("employee");
   };
 
-  // searchByName = () => {
-  //   const filteredByEmployee = [...this.state.results].sort(
-  //     (a, b) => (a.name.last > b.name.last ? 1 : -1)
-  //     // (a, b) => (a.name.first > b.name.first ? 1 : -1)
-  //   );
-  //   console.log(filteredByEmployee);
-  //   this.setState({ filteredEmployees: filteredByEmployee });
-  // };
+  //Sort function not working (currently)
+  sortByName = () => {
+    const filteredByName = [this.state.employees].sort((a, b) =>
+      a.name.last > b.name.last ? 1 : -1
+    );
+    console.log(filteredByName);
+    this.setState({ filteredEmployees: filteredByName });
+  };
 
   render() {
     console.log("employees", this.state.employees);
@@ -64,11 +65,21 @@ export default class App extends Component {
                   onChange={(e) => this.handleInput(e)}
                 />
               </div>
+              {/* added a sort button to the main page */}
+              <div>
+                <hr />
+                <button
+                  onClick={this.sortByName}
+                  className="btn btn-warning ml-2 mr-2 mb-4"
+                >
+                  Sort Last Name
+                </button>
+              </div>
               <br></br>
               {/* key names are always on the left and the values on the right */}
               <EmployeeTable
                 isFetching={this.state.isFetching}
-                employees={this.state.filteredEmployees}
+                employees={this.state.employees}
               />
               <Main />
             </Wrapper>
