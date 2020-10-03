@@ -20,7 +20,6 @@ export default class App extends Component {
     // console.log(response.data.results);
     const response = await API.getUsers();
     console.log(response.data.results);
-
     this.setState({
       employees: response.data.results,
       isFetching: true,
@@ -37,9 +36,7 @@ export default class App extends Component {
       userInput: e.target.value,
       filteredEmployees: [...this.state.employees].filter((employee) => {
         console.log("filter", this.state.employees);
-
         const regex = new RegExp(e.target.value, "gi");
-
         return employee.name.last.match(regex);
       }),
     });
@@ -48,12 +45,15 @@ export default class App extends Component {
 
   //Sort function not working (currently)
   sortByName = () => {
-    const filteredByName = [this.state.employees].sort((a, b) =>
+    const filteredByName = [...this.state.employees].sort((a, b) =>
       a.name.last > b.name.last ? 1 : -1
     );
 
     console.log(filteredByName, this.state.employees);
     this.setState({ filteredEmployees: filteredByName });
+  };
+  resetBack = () => {
+    this.setState({ filteredEmployees: this.state.employees });
   };
 
   render() {
@@ -80,6 +80,12 @@ export default class App extends Component {
                   className="btn btn-warning ml-2 mr-2 mb-4"
                 >
                   Sort Last Name
+                </button>
+                <button
+                  onClick={this.resetBack}
+                  className="btn btn-warning ml-2 mr-2 mb-4"
+                >
+                  Reset
                 </button>
               </div>
               <br></br>

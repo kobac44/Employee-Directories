@@ -8,10 +8,10 @@ export default class EmployeeList extends Component {
         {!this.props.isFetching ? (
           <div></div>
         ) : (
-          this.props.employees.map((employee) => {
+          this.props.employees.map((employee, i) => {
             console.log("employee", employee);
             return (
-              <tr key={employee.login.uuid}>
+              <tr key={i}>
                 <td>
                   <img
                     src={employee.picture.thumbnail}
